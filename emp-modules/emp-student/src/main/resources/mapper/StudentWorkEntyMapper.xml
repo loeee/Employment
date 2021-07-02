@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.StudentWorkEntyMapper" >
+  <resultMap id="mainMap" type="com.just.emp.po.WorkInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="opera" property="opera" jdbcType="VARCHAR" />
+    <result column="treatment" property="treatment" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="exp" property="exp" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="claim" property="claim" jdbcType="VARCHAR" />
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="location" property="location"></result>
+    </association>
+    <association property="enterInfo" javaType="com.just.emp.po.EnterInfo">
+      <id property="id" column="id"></id>
+      <result column="uid" property="uid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="cname" property="cname"></result>
+      <result column="tel" property="tel"></result>
+      <result column="listing" property="listing"></result>
+      <result column="legal" property="legal"></result>
+      <result column="principal" property="principal"></result>
+      <result column="time" property="time"></result>
+      <result column="money" property="money"></result>
+      <result column="attribute" property="attribute"></result>
+      <result column="info" property="info"></result>
+      <result column="licenseimg" property="licenseimg"></result>
+      <result column="logoimg" property="logoimg"></result>
+      <result column="people" property="people"></result>
+      <result column="status" property="status"></result>
+      <result column="touximg" property="touximg"></result>
+    </association>
+  </resultMap>
+  <resultMap id="ResumeMap" type="com.just.emp.po.WorkInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="opera" property="opera" jdbcType="VARCHAR" />
+    <result column="treatment" property="treatment" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="exp" property="exp" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="claim" property="claim" jdbcType="VARCHAR" />
+    <association property="resume" javaType="com.just.emp.po.Resume">
+      <id column="id" property="id"/>
+      <result column="infomation" property="infomation"/>
+      <result column="status" property="status"/>
+      <result column="tid" property="tid"/>
+      <result column="wid" property="wid"/>
+      <result column="uid" property="uid"/>
+      <result column="resumefile" property="resumefile"/>
+    </association>
+    <association property="enterInfo" javaType="com.just.emp.po.EnterInfo">
+      <id property="id" column="id"></id>
+      <result column="uid" property="uid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="cname" property="cname"></result>
+      <result column="tel" property="tel"></result>
+      <result column="listing" property="listing"></result>
+      <result column="legal" property="legal"></result>
+      <result column="principal" property="principal"></result>
+      <result column="time" property="time"></result>
+      <result column="money" property="money"></result>
+      <result column="attribute" property="attribute"></result>
+      <result column="info" property="info"></result>
+      <result column="licenseimg" property="licenseimg"></result>
+      <result column="logoimg" property="logoimg"></result>
+      <result column="people" property="people"></result>
+      <result column="status" property="status"></result>
+      <result column="touximg" property="touximg"></result>
+    </association>
+  </resultMap>
+  <resultMap id="mainMap1" type="com.just.emp.po.Enterprise" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="gc" property="gc" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="imgpath" property="imgpath" jdbcType="VARCHAR" />
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="city" property="city"></result>
+      <result column="county" property="county"></result>
+      <result column="detailaddr" property="detailaddr"></result>
+    </association>
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.just.emp.po.Work" >
+
+    <id column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="wname" property="wname" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="category" property="category" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="principal" property="principal" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="city" property="city"></result>
+      <result column="county" property="county"></result>
+      <result column="detailaddr" property="detailaddr"></result>
+    </association>
+
+    <association property="offerPaths" javaType="com.just.emp.po.OfferPath">
+      <id property="pathid" column="pathid"></id>
+      <result column="uid" property="uid"></result>
+      <result column="path" property="path"></result>
+    </association>
+
+  </resultMap>
+  <resultMap id="BaseResultMap1" type="com.just.emp.po.Resume" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="infomation" property="infomation" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="resumefile" property="resumefile" jdbcType="VARCHAR" />
+    <result column="gc" property="gc" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+
+  <resultMap id="BaseResultMap3" type="com.just.emp.po.WorkInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="person" property="person" jdbcType="VARCHAR" />
+    <result column="opera" property="opera" jdbcType="VARCHAR" />
+    <result column="treatment" property="treatment" jdbcType="VARCHAR" />
+    <result column="profile" property="profile" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="legal" property="legal" jdbcType="VARCHAR" />
+    <result column="money" property="money" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="listing" property="listing" jdbcType="VARCHAR" />
+    <result column="listing" property="listing" jdbcType="VARCHAR" />
+    <result column="people" property="people" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="attribute" property="attribute" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="city" property="city"></result>
+      <result column="county" property="county"></result>
+      <result column="detailaddr" property="detailaddr"></result>
+    </association>
+  </resultMap>
+
+  <resultMap id="resumeMap" type="com.just.emp.po.Enterprise" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="gc" property="gc" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="imgpath" property="imgpath" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <association property="resume" javaType="com.just.emp.po.Resume">
+      <id column="id" property="id"/>
+      <result column="infomation" property="infomation"/>
+      <result column="status" property="status"/>
+      <result column="tid" property="tid"/>
+      <result column="wid" property="wid"/>
+      <result column="uid" property="uid"/>
+      <result column="resumefile" property="resumefile"/>
+      <result column="gc" property="gc"/>
+      <result column="gw" property="gw"/>
+      <result column="type" property="type"/>
+      <result column="tel" property="tel"/>
+    </association>
+  </resultMap>
+
+<!-- 主页数据查询and展示-->
+  <select id="selectWorkAll" resultMap="mainMap">
+    select a.*,w.* ,e.* from workinfo w,address a,enterinfo e where w.wid = a.wid and w.tid = a.tid and w.uid = e.uid and w.type=#{type}
+    <if test="keyword !=null and keyword !='' ">
+      and (w.gname like '%${keyword}%' or e.cname like '%${keyword}%' or w.gw like '%${keyword}%')
+    </if>
+  </select>
+   <!--收藏夹-->
+  <select id="selectFavorite" resultMap="mainMap">
+    select a.*,w.* ,e.* from workinfo w,address a,enterinfo e,collect c where c.uid=#{uid} and c.tid = w.tid and c.wid = w.wid and w.tid = e.tid and c.tid = a.tid and c.wid = a.wid
+  </select>
+
+
+  <select id="selectWork" resultMap="BaseResultMap">
+    select  w.* ,o.path,a.* from work w,offer o,address a where w.uid = o.uid and w.wid = a.wid and w.uid = #{uid}
+  </select>
+  <insert id="insertWork">
+    INSERT INTO work (wid,wname,salary,category,uid,telephone,principal) VALUES (#{wid},#{wname},#{salary},#{category},#{uid},#{telephone},#{principal})
+  </insert>
+  <insert id="insertImage">
+    INSERT INTO offer (uid,path) VALUES (#{uid},#{path})
+  </insert>
+  <update id="updateWork">
+    UPDATE work SET wid=#{wid} ,wname=#{wname},salary=#{salary},category=#{category},telephone=#{telephone},principal = #{principal} WHERE uid = #{uid}
+  </update>
+  <update id="updateImage">
+    update offer set path=#{path} where uid=#{uid}
+  </update>
+  <delete id="deleteWork">
+    delete from work where wid=#{wid}
+  </delete>
+  <delete id="deleteCollect">
+    delete from collect where wid=#{wid} and tid=#{tid} and uid=#{uid}
+  </delete>
+  <insert id="insertCollect">
+    insert into collect(uid,tid,wid) values (#{uid},#{tid},#{wid})
+  </insert>
+
+
+  <!--查看已经投递的简历-->
+  <select id="selectResume" resultMap="ResumeMap">
+    select e.cname,e.tel,r.*,w.* from resume_stu r,enterinfo e,workinfo w where r.uid = #{uid} and r.tid = w.tid and r.wid = w.wid and r.tid = e.tid
+    <if test="status !=null and status !='' ">
+      and r.status = #{status}
+    </if>
+    <if test="name !=null and name !='' ">
+      and (w.gname like '%${name}%' or e.cname like '%${name}%' or w.gw like '%${name}%')
+    </if>
+     limit #{start},#{rows}
+  </select>
+  <!--查询简历总数-->
+  <select id="findTotal" resultType="INTEGER">
+    select count(*) from resume_stu r,workinfo w,enterinfo e where r.uid = #{uid} and r.wid = w.wid and r.tid = w.tid and r.tid = e.tid
+    <if test="status !=null and status !='' ">
+      and r.status = #{status}
+    </if>
+    <if test="name !=null and name !='' ">
+      and (w.gname like '%${name}%' or e.cname like '%${name}%' or w.gw like '%${name}%')
+    </if>
+  </select>
+   <!--查询通过的-->
+  <select id="findTotalReBystatu" resultType="INTEGER">
+    select count(*) from resume_stu r,workinfo w,enterinfo e where r.uid = #{uid} and r.wid = w.wid and r.tid = w.tid and r.tid = e.tid and r.status = #{status}
+    <if test="name !=null and name !='' ">
+      and (w.gname like '%${name}%' or e.cname like '%${name}%' or w.gw like '%${name}%')
+    </if>
+  </select>
+
+
+  <!--查看简历详细信息-->
+  <select id="resumeInfo" resultType="com.just.emp.po.Resume">
+    select * from resume_stu where uid = #{uid} and tid = #{tid} and wid = #{wid}
+  </select>
+
+  <!--删除简历-->
+  <delete id="delResume">
+    delete from resume_stu where uid = #{uid} and tid = #{tid} and wid = #{wid}
+  </delete>
+
+  <!--根据公司、岗位名称查询-->
+  <select id="selectLikeResume" resultMap="resumeMap">
+    select e.*,r.* from resume_stu r,enter e where r.uid=#{uid} and r.tid = e.tid and r.wid = e.wid and (e.gc like '%${name}%' or e.gw = '%${name}%') and r.status = #{status} limit #{start},#{rows}
+  </select>
+
+  <select id="findTotalLikeCountByuid" resultType="INTEGER">
+    select count(*) from resume_stu where uid = #{uid} and (gc like '%${name}%' or gw = '%${name}%') and status = #{status}
+  </select>
+  <select id="findTotalLikeReBystatu" resultType="INTEGER">
+     select count(*) from resume_stu where uid = #{uid} and (gc like '%${name}%' or gw = '%${name}%') and status = 'Y'
+  </select>
+
+  <select id="selectLikeResumetol" resultMap="BaseResultMap1">
+    select * from resume_stu where uid=#{uid} and (gc like '%${name}%' or gw = '%${name}%') limit #{start},#{rows}
+  </select>
+
+  <select id="findTotalLikeCountBytol" resultType="INTEGER">
+    select count(*) from resume_stu where uid = #{uid} and (gc like '%${name}%' or gw = '%${name}%')
+  </select>
+
+  <select id="selectMyEmployment" resultType="com.just.emp.po.Employment">
+    select * from employment where uid = #{uid}
+  </select>
+
+  <!--添加就业信息-->
+  <insert id="insertMyemp">
+    insert into employment(gc,gw,type,uid,salary,emimg) values (#{gc},#{gw},#{type},#{uid},#{salary},#{emimg})
+  </insert>
+
+  <!--修改信息-->
+  <update id="updateMyemp">
+    update  employment set gc = #{gc},gw = #{gw},type = #{type},salary = #{salary} where uid=#{uid}
+  </update>
+
+
+
+
+<!--  删除就业信息-->
+  <delete id="delMyemp">
+    delete from employment where uid = #{uid}
+  </delete>
+
+  <select id="InfoMe" resultMap="BaseResultMap3">
+    select i.*,a.* from workinfo i,address a where i.name = #{gc} and i.tid = a.tid and i.wid = a.wid
+  </select>
+
+
+  <!--上传简历-->
+  <insert id="insertUploadsResume">
+    insert into resume_stu(uid,tid,wid,resumefile) values (#{uid},#{tid},#{wid},#{resumefile})
+  </insert>
+
+  <!--查询工作详细信息-->
+  <select id="SelectWorkInfo" resultMap="mainMap">
+    select a.location,e.*,w.* from address a,enterinfo e,workinfo w where w.tid = #{tid} and w.wid  = #{wid} and w.tid = a.tid and w.wid = a.wid and w.tid = e.tid;
+  </select>
+
+  <select id="SelectMycllockInfo" resultType="INTEGER">
+    select count(*) from collect where uid = #{uid} and tid = #{tid} and wid = #{wid}
+  </select>
+</mapper>
+
+

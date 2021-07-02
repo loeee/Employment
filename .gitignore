@@ -1,0 +1,10 @@
+# Project exclude paths
+/emp-api/target/
+/emp-auth/target/
+/emp-commons/target/
+/emp-gateway/target/
+/emp-modules/emp-enter/target/
+/emp-modules/emp-file/target/
+/emp-modules/emp-student/target/
+/emp-modules/emp-teacher/target/
+/out/

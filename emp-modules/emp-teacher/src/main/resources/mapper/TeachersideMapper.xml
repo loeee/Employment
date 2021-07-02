@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.TeachersideMapper" >
+    <resultMap id="BaseResultMap" type="com.just.emp.po.StudentInfo" >
+        <id column="uid" property="uid" jdbcType="VARCHAR" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="nat" property="nat" jdbcType="VARCHAR" />
+        <result column="sex" property="sex" jdbcType="VARCHAR" />
+        <result column="nation" property="nation" jdbcType="VARCHAR" />
+        <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+        <result column="time" property="time" jdbcType="VARCHAR" />
+        <result column="school" property="school" jdbcType="INTEGER" />
+        <result column="major" property="major" jdbcType="VARCHAR" />
+        <result column="experience" property="experience" jdbcType="VARCHAR" />
+        <result column="awards" property="awards" jdbcType="VARCHAR" />
+        <result column="skills" property="skills" jdbcType="VARCHAR" />
+        <result column="evaluation" property="evaluation" jdbcType="INTEGER" />
+        <result column="studentcard" property="studentcard" jdbcType="VARCHAR" />
+        <result column="department" property="department" jdbcType="VARCHAR" />
+        <result column="cla" property="cla" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+        <result column="diploma" property="diploma" jdbcType="VARCHAR" />
+        <result column="timg" property="timg" jdbcType="VARCHAR" />
+        <result column="xli" property="xli" jdbcType="VARCHAR" />
+        <association property="employment" javaType="com.just.emp.po.Employment">
+            <id property="id" column="id"></id>
+            <result column="gc" property="gc"></result>
+            <result column="gw" property="gw"></result>
+            <result column="salary" property="salary"></result>
+            <result column="type" property="type"></result>
+            <result column="uid" property="uid"></result>
+            <result column="eming" property="eming"></result>
+        </association>
+    </resultMap>
+
+   <!-- 查询老师信息-->
+    <select id="selectInfo" resultType="com.just.emp.po.TeacherInfo">
+    select * from teacherinfo where uid=#{uid}
+  </select>
+    <!--修改老师信息-->
+    <update id="updateInfo">
+        update teacherinfo set
+        <if test="type=='name'">
+            name = #{chang}
+        </if>
+        <if test="type=='sex'">
+            sex = #{chang}
+        </if>
+        <if test="type=='tel'">
+            tel = #{chang}
+        </if>
+        <if test="type=='em'">
+            email = #{chang}
+        </if>
+        <if test="type=='yx'">
+            faculty = #{chang}
+        </if>
+        <if test="type=='zy'">
+            major = #{chang}
+        </if>
+        <if test="type=='cla'">
+            cla = #{chang}
+        </if>
+        <if test="type=='sc‘">
+            school = #{chang}
+        </if>
+        where uid = #{uid}
+    </update>
+    <!--查询班级学生就业信息可视化数据-->
+    <select id="selectClass" resultType="com.just.emp.po.EchartsMagor">
+       select sex,sum(case when emp='Y'  then 1 else 0 end) ytotal,sum(case when emp='N' then 1 else 0 end) utotal ,count(cla) total from studentinfo where cla = #{cla} group by sex
+    </select>
+
+    <!--查询专业学生就业信息可视化数据-->
+    <select id="selectEmpInfo" resultType="com.just.emp.po.EchartsMagor">
+        select cla,sum(case when emp='Y' then 1 else 0 end) ytotal,sum(case when emp='N' then 1 else 0 end) utotal ,count(cla) total from studentinfo where major = #{major} group by cla
+    </select>
+
+    <!--查询班级学生就业信息-->
+    <!--总人数-->
+    <select id="findTotalLikeReBycla" resultType="INTEGER">
+      select count(*) from studentinfo where cla = #{cla}
+    </select>
+
+    <!--查询班级学生就业信息-->
+    <!--就业人数-->
+    <select id="findTotalLikeReByemp" resultType="INTEGER">
+      select count(*) from studentinfo where cla = #{cla} and emp = 'Y'
+    </select>
+    <select id="selectLikeStuInfo" resultMap="BaseResultMap">
+        select s.uid,s.name,s.sex,s.cla,s.telephone,e.gc,e.salary from studentinfo s,employment e where s.uid = e.uid and s.cla = #{cla}
+        <if test="gc != null and gc !=''">
+            and e.gc like '%${gc}%'
+        </if>
+        <if test="sex != null and sex !=''">
+            and s.sex like '%${sex}%'
+        </if>
+        limit #{start},#{rows}
+    </select>
+
+    <!--查询班级学生就业信息-->
+    <!--总人数-->
+    <select id="findTotalLikeMaBycla" resultType="INTEGER">
+      select count(*) from studentinfo where major = #{major}
+    </select>
+    <!--查询班级学生就业信息-->
+    <!--就业人数-->
+    <select id="findTotalLikeMaByemp" resultType="INTEGER">
+      select count(*) from studentinfo where major = #{major} and emp = 'Y'
+    </select>
+    <select id="selectLikeMajorInfo" resultMap="BaseResultMap">
+        select s.uid,s.name,s.sex,s.cla,s.telephone,e.gc,e.salary from studentinfo s,employment e where s.uid = e.uid and s.major = #{major}
+        <if test="gc != null and gc !=''">
+            and e.gc like '%${gc}%'
+        </if>
+        <if test="sex != null and sex !=''">
+            and s.sex like '%${sex}%'
+        </if>
+        limit #{start},#{rows}
+    </select>
+
+    <insert id="updatetouximg">
+     UPDATE teacherinfo SET timg=#{imgpath} WHERE uid = #{uid}
+   </insert>
+    <!--修改密码-->
+    <update id="updatePwd">
+    UPDATE tab_user SET password=#{newPwd} WHERE uid = #{uid}
+   </update>
+
+    <select id="SelectEpmStuInfo" resultType="com.just.emp.po.Employment">
+        select * from employment where uid = #{uid}
+    </select>
+</mapper>

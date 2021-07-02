@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="emp-api:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="af2e51ea-f3b7-4a5e-8156-e5f0cfcbafec" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="$PROJECT_DIR$/../../../Maven/repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Maven/apache-maven-3.8.1" />
+        <option name="userSettingsFile" value="$PROJECT_DIR$/../../../Maven/apache-maven-3.8.1/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="1u447CI8TmcpsvbenQ9SaaYZlOS" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.122249365" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/emp-modules/emp-file/src/main/resources" />
+      <recent name="$PROJECT_DIR$/emp-modules/emp-file/src/main/java/com/just/emp" />
+      <recent name="$PROJECT_DIR$/emp-modules/emp-enter/src/main/resources" />
+      <recent name="$PROJECT_DIR$/emp-modules/emp-teacher/src/main/resources" />
+      <recent name="$PROJECT_DIR$/emp-modules/emp-teacher/src/main/resources/mapper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/emp-api/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.just.emp.mapper" />
+      <recent name="com.just.emp" />
+      <recent name="com.just.emp.service" />
+      <recent name="com.just.emp.po" />
+      <recent name="com.just.emp.service.Impl" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EmpGateway">
+    <configuration name="EmpAuthMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="emp-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.EmpAuthMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmpEnterMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="emp-enter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.EmpEnterMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmpGateway" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="emp-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.just.emp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.EmpGateway" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmpStudentMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="emp-student" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.EmpStudentMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmpTeacherMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="emp-teacher" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.EmpTeacherMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="emp-file" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.just.emp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.just.emp.FileMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EmpTeacherMain" />
+      <item itemvalue="Spring Boot.EmpEnterMain" />
+      <item itemvalue="Spring Boot.EmpStudentMain" />
+      <item itemvalue="Spring Boot.EmpAuthMain" />
+      <item itemvalue="Spring Boot.EmpGateway" />
+      <item itemvalue="Spring Boot.FileMain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.EmpGateway" />
+        <item itemvalue="Spring Boot.EmpAuthMain" />
+        <item itemvalue="Spring Boot.FileMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="af2e51ea-f3b7-4a5e-8156-e5f0cfcbafec" name="Default Changelist" comment="" />
+      <created>1623911360189</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623911360189</updated>
+      <workItem from="1623911361653" duration="8411000" />
+      <workItem from="1623919944640" duration="361000" />
+      <workItem from="1623920354411" duration="373000" />
+      <workItem from="1623920767395" duration="813000" />
+      <workItem from="1623921663207" duration="2364000" />
+      <workItem from="1623924116544" duration="5716000" />
+      <workItem from="1623941428202" duration="634000" />
+      <workItem from="1623971262440" duration="218000" />
+      <workItem from="1623971622087" duration="1329000" />
+      <workItem from="1623975703814" duration="648000" />
+      <workItem from="1624063334067" duration="4022000" />
+      <workItem from="1624170135028" duration="1791000" />
+      <workItem from="1624172125751" duration="3098000" />
+      <workItem from="1624193701044" duration="144000" />
+      <workItem from="1624332474616" duration="3151000" />
+      <workItem from="1624363821635" duration="240000" />
+      <workItem from="1624364112299" duration="315000" />
+      <workItem from="1624364496656" duration="5639000" />
+      <workItem from="1624377581734" duration="4480000" />
+      <workItem from="1624407935366" duration="1840000" />
+      <workItem from="1624513926935" duration="4414000" />
+      <workItem from="1624582244016" duration="10630000" />
+      <workItem from="1624761988866" duration="4361000" />
+      <workItem from="1624840171505" duration="19826000" />
+      <workItem from="1624892783296" duration="1823000" />
+      <workItem from="1624896069097" duration="480000" />
+      <workItem from="1624926090543" duration="6535000" />
+      <workItem from="1625013045468" duration="663000" />
+      <workItem from="1625215563756" duration="626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

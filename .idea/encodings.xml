@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/emp-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-commons/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-enter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-enter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-file/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-student/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-student/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-teacher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emp-modules/emp-teacher/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

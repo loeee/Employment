@@ -1,0 +1,26 @@
+server:
+  port: 9201
+
+spring:
+  application:
+    name: emp-student #服务名称
+  cloud:
+    consul:
+      host: localhost #consul的服务地址ip，本机填写localhost或者127.0.0.1，云服务器填写对应IP地址
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} #服务的名称
+        prefer-ip-address: true
+        heartbeat:
+          enabled: true #打开心跳机制 否则Consul注册的服务中会有"红叉"
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.211.55.10:3306/emp?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    username: root
+    password: ldlsrb0617
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.just.emp.po  #所有domain别名所在包

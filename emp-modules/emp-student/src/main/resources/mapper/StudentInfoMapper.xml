@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.StudentInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.just.emp.po.StudentInfo" >
+    <id column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="nat" property="nat" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="nation" property="nation" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="school" property="school" jdbcType="INTEGER" />
+    <result column="major" property="major" jdbcType="VARCHAR" />
+    <result column="experience" property="experience" jdbcType="VARCHAR" />
+    <result column="awards" property="awards" jdbcType="VARCHAR" />
+    <result column="skills" property="skills" jdbcType="VARCHAR" />
+    <result column="evaluation" property="evaluation" jdbcType="INTEGER" />
+    <result column="studentcard" property="studentcard" jdbcType="VARCHAR" />
+    <result column="department" property="department" jdbcType="VARCHAR" />
+    <result column="cla" property="cla" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="diploma" property="diploma" jdbcType="VARCHAR" />
+    <result column="timg" property="timg" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="educational" property="educational" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="selectInfo" resultMap="BaseResultMap" parameterType="com.just.emp.po.StudentInfo">
+    select * from studentinfo where uid=#{uid}
+  </select>
+  <insert id="inserttouximg">
+    UPDATE studentinfo SET timg=#{imgpath} WHERE uid = #{uid}
+  </insert>
+  <update id="saveInfo">
+    UPDATE studentinfo SET telephone=#{telephone} ,email = #{email} WHERE uid = #{uid}
+  </update>
+  <select id="selectOldPwd" parameterType="java.lang.String" resultType="java.lang.String">
+    select password from tab_user where uid=#{uid}
+  </select>
+  <update id="savePwd">
+    UPDATE tab_user SET password=#{newPwd} WHERE uid = #{uid}
+  </update>
+  
+  <!--没有学生信息，添加-->
+  <insert id="insertStudentInfo">
+    INSERT INTO studentinfo(uid,name,cla,sex,nat,nation,telephone,email,department,birthday,school,time,major,xli,experience,awards,skills,evaluation,studentcard,diploma) VALUES (#{uid},#{name},#{cla},#{sex},#{nat},#{nation},#{telephone},#{email},#{department},#{birthday},#{school},#{time},#{major},#{xli},#{experience},#{awards},#{skills},#{evaluation},#{studentcard},#{diploma})
+  </insert>
+
+  <!--更新学生信息-->
+  <update id="updateStudentInfo">
+    UPDATE studentinfo SET name = #{name},cla= #{cla},sex= #{sex},nat= #{nat},nation= #{nation},telephone= #{telephone},email= #{email},department= #{department},birthday= #{birthday},school= #{school},time= #{time},major= #{major},xli= #{xli},experience= #{experience},awards= #{awards},skills= #{skills},evaluation= #{evaluation},studentcard= #{studentcard},diploma= #{diploma} WHERE uid = #{uid}
+  </update>
+
+  <update id="updataStuinfo">
+    UPDATE studentinfo SET name = #{name},cla= #{cla},sex= #{sex},nation= #{nation},school= #{school},major= #{major},xli= #{xli} WHERE uid = #{uid}
+  </update>
+  <update id="updateTelInfo">
+     UPDATE studentinfo SET telephone = #{telephone},email= #{email} WHERE uid = #{uid}
+  </update>
+  <update id="updategzjlinfo">
+    UPDATE studentinfo SET experience= #{experience} WHERE uid = #{uid}
+  </update>
+  <update id="updateskillinfo">
+    UPDATE studentinfo SET skills= #{skills} WHERE uid = #{uid}
+  </update>
+  <update id="updateevainfo">
+    UPDATE studentinfo SET evaluation= #{evaluation} WHERE uid = #{uid}
+  </update>
+  <update id="updateeduinfo">
+    UPDATE studentinfo SET educational= #{educational} WHERE uid = #{uid}
+  </update>
+
+
+
+</mapper>

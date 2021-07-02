@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: emp-gateway
+  cloud:
+    consul:
+      host: localhost #consul的服务地址ip，本机填写localhost或者127.0.0.1，云服务器填写对应IP地址
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} #服务的名称
+        prefer-ip-address: true
+        heartbeat:
+          enabled: true #打开心跳机制 否则Consul注册的服务中会有"红叉"
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: emp-auth #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:9200         #匹配后提供服务的路由地址
+          uri: lb://emp-auth #匹配后提供服务的路由地址
+          predicates:
+            - Path=/auth/**       # 断言，路径相匹配的进行路由
+        - id: emp-student #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://emp-student #匹配后提供服务的路由地址
+          predicates:
+            - Path=/student/**       # 断言，路径相匹配的进行路由
+        - id: emp-teacher #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://emp-teacher #匹配后提供服务的路由地址
+          predicates:
+            - Path=/teacher/**       # 断言，路径相匹配的进行路由
+        - id: emp-enter #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://emp-enter #匹配后提供服务的路由地址
+          predicates:
+            - Path=/enterprise/**       # 断言，路径相匹配的进行路由
+        - id: emp-file #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://emp-file #匹配后提供服务的路由地址
+          predicates:
+            - Path=/file/**       # 断言，路径相匹配的进行路由
+
+

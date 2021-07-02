@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.FileMapper" >
+  <resultMap id="BaseResultMap" type="com.just.emp.po.Userlogin" >
+    <id column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  <update id="updateheadImg">
+    update tab_user set toux = #{path} where uid=#{uid}
+  </update>
+
+  <update id="updateLogo">
+    update enterinfo set logoimg = #{logoimg} where uid=#{uid}
+  </update>
+  <update id="updateLic">
+    update enterinfo set licenseimg = #{licenseimg} where uid=#{uid}
+  </update>
+
+  <insert id="insertResume_stu">
+    INSERT INTO resume_stu (status,tid,wid,uid,resumefile) VALUES ("未通过",#{tid},#{wid},#{uid},#{resumefile})
+  </insert>
+
+  <insert id="insertResume_en">
+    INSERT INTO resume_en (status,tid,wid,uid,gw,tuid) VALUES ("未通过",#{tid},#{wid},#{uid},#{gw},#{tuid})
+  </insert>
+
+  <update id="updateMyempImg">
+    update  employment set emimg = #{emimg} where uid=#{uid}
+  </update>
+
+  <insert id="insertMyempInfoImg">
+    insert into  employment(uid,gc,gw,type,salary,emimg) values(#{uid},#{gc},#{gw},#{type},#{salary},#{emimg})
+  </insert>
+</mapper>

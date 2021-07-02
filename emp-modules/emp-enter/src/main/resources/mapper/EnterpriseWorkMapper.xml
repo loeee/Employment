@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.EnterpriseWorkMapper" >
+  <resultMap id="BaseResultMap" type="com.just.emp.po.Enterprise" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="gc" property="gc" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="imgpath" property="imgpath" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="city" property="city"></result>
+      <result column="county" property="county"></result>
+      <result column="detailaddr" property="detailaddr"></result>
+    </association>
+  </resultMap>
+
+  <resultMap id="BaseResultMap1" type="com.just.emp.po.WorkInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="opera" property="opera" jdbcType="VARCHAR" />
+    <result column="treatment" property="treatment" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="exp" property="exp" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="claim" property="claim" jdbcType="VARCHAR" />
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="location" property="location"></result>
+    </association>
+    <association property="enterInfo" javaType="com.just.emp.po.EnterInfo">
+      <id property="id" column="id"></id>
+      <result column="uid" property="uid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="cname" property="cname"></result>
+      <result column="tel" property="tel"></result>
+      <result column="listing" property="listing"></result>
+      <result column="legal" property="legal"></result>
+      <result column="principal" property="principal"></result>
+      <result column="time" property="time"></result>
+      <result column="money" property="money"></result>
+      <result column="attribute" property="attribute"></result>
+      <result column="info" property="info"></result>
+      <result column="licenseimg" property="licenseimg"></result>
+      <result column="logoimg" property="logoimg"></result>
+      <result column="people" property="people"></result>
+      <result column="status" property="status"></result>
+      <result column="touximg" property="touximg"></result>
+      <result column="email" property="email"></result>
+    </association>
+  </resultMap>
+
+
+  <resultMap id="EnterInfo" type="com.just.emp.po.Enterprise" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="gname" property="gname" jdbcType="VARCHAR" />
+    <result column="salary" property="salary" jdbcType="VARCHAR" />
+    <result column="gc" property="gc" jdbcType="VARCHAR" />
+    <result column="gw" property="gw" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="xli" property="xli" jdbcType="VARCHAR" />
+    <result column="wid" property="wid" jdbcType="VARCHAR" />
+    <result column="tid" property="tid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="logo" property="logo" jdbcType="VARCHAR" />
+
+    <association property="address" javaType="com.just.emp.po.Address">
+      <id property="id" column="id"></id>
+      <result column="wid" property="wid"></result>
+      <result column="tid" property="tid"></result>
+      <result column="province" property="province"></result>
+      <result column="city" property="city"></result>
+      <result column="county" property="county"></result>
+      <result column="detailaddr" property="detailaddr"></result>
+    </association>
+  </resultMap>
+    <resultMap id="ResumeAccept" type="com.just.emp.po.StudentInfo" >
+      <id column="uid" property="uid" jdbcType="VARCHAR" />
+      <result column="name" property="name" jdbcType="VARCHAR" />
+      <result column="nat" property="nat" jdbcType="VARCHAR" />
+      <result column="sex" property="sex" jdbcType="VARCHAR" />
+      <result column="nation" property="nation" jdbcType="VARCHAR" />
+      <result column="birthday" property="birthday" jdbcType="VARCHAR" />
+      <result column="time" property="time" jdbcType="VARCHAR" />
+      <result column="school" property="school" jdbcType="INTEGER" />
+      <result column="major" property="major" jdbcType="VARCHAR" />
+      <result column="experience" property="experience" jdbcType="VARCHAR" />
+      <result column="awards" property="awards" jdbcType="VARCHAR" />
+      <result column="skills" property="skills" jdbcType="VARCHAR" />
+      <result column="evaluation" property="evaluation" jdbcType="INTEGER" />
+      <result column="studentcard" property="studentcard" jdbcType="VARCHAR" />
+      <result column="department" property="department" jdbcType="VARCHAR" />
+      <result column="cla" property="cla" jdbcType="VARCHAR" />
+      <result column="email" property="email" jdbcType="VARCHAR" />
+      <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+      <result column="diploma" property="diploma" jdbcType="VARCHAR" />
+      <result column="timg" property="timg" jdbcType="VARCHAR" />
+      <result column="xli" property="xli" jdbcType="VARCHAR" />
+      <association property="resume" javaType="com.just.emp.po.Resume">
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="infomation" property="infomation"/>
+        <result column="status" property="status"/>
+        <result column="uid" property="uid"/>
+        <result column="tuid" property="tuid"/>
+        <result column="wid" property="wid"/>
+        <result column="tid" property="tid"/>
+        <result column="gw" property="gw"/>
+        <result column="resumefile" property="resumefile"/>
+      </association>
+    </resultMap>
+
+
+
+  <select id="selectWorkAll" resultMap="BaseResultMap">
+    select e.*,a.* from enter e,address a where e.wid = a.wid and e.tid = a.tid
+    <if test="keyword !=null and keyword !='' ">
+      and (gname like '%${keyword}%' or gc like '%${keyword}%' or gw like '%${keyword}%')
+    </if>
+  </select>
+  <select id="selectWorkInfo" resultMap="BaseResultMap1">
+    select i.*,a.* from workinfo i,address a where i.tid = #{tid} and i.wid = #{wid} and i.tid = a.tid and i.wid = a.wid
+  </select>
+
+  <!--我的收藏-->
+  <select id="selectfavorite" resultMap="BaseResultMap">
+    select e.*,a.* from enter e,address a,collect c where c.uid = #{uid} and e.wid = a.wid and e.tid = a.tid and c.tid = e.tid and c.wid=e.wid
+  </select>
+
+  <select id="selectAddByWid" resultType="com.just.emp.po.Address">
+    select * from address where wid = #{wid}
+  </select>
+
+
+
+  <insert id="insertWork">
+    INSERT INTO workinfo(opera,tid,wid,uid,salary,exp,xli,gname,claim,type) VALUES (#{gwzz},#{gsbh},#{gwbh},#{uid},#{yx},#{gzjy},#{xli},#{gwmc},#{rzyq},#{gwsx})
+  </insert>
+
+  <select id="selectImg" resultType="com.just.emp.po.WorkImgPath">
+    select * from workimg where wid = #{wid}
+  </select>
+  <insert id="insertimg">
+    insert into workimg(wid,path) values (#{wid},#{path})
+  </insert>
+
+  <delete id="deleteWork">
+     delete from workinfo where tid=#{tid} and wid = #{wid}
+  </delete>
+  <delete id="deleteAddress">
+     delete from address where tid=#{tid} and wid = #{wid}
+  </delete>
+
+  <select id="selectInfo" resultMap="BaseResultMap">
+    select e.*,w.*,a.* from enter e,workinfo w,address a where e.tid = #{tid} and e.tid = w.tid and e.wid = a.wid
+  </select>
+  <update id="updateWork">
+
+  </update>
+
+
+
+
+  <select id="findinfoOne" resultType="com.just.emp.po.Resume">
+    select * from resume where name=#{name} and tid=#{id}
+  </select>
+  <update id="updateaccept">
+    UPDATE resume SET status=#{status},exp = #{explain} WHERE tid = #{tid} and name = #{name}
+  </update>
+
+  <select id="collect" resultType="INTEGER">
+    select * from collect where tid = #{tid} and uid=#{uid} and tid = #{tid}
+  </select>
+
+  <!--查询公司的岗位-->
+  <select id="selectEnterAll" resultMap="BaseResultMap1">
+    select a.*,w.* ,e.* from workinfo w,address a,enterinfo e where w.uid = #{uid} and w.uid = e.uid and a.tid = w.tid and a.wid = w.wid
+  </select>
+
+  <!--地址-->
+  <insert id="insertAddress">
+    INSERT INTO address (wid,tid,province,location) VALUES (#{wid},#{tid},#{province},#{location})
+  </insert>
+  <!--工作信息-->
+  <insert id="insertWorkInfo">
+    insert workinfo(opera,treatment,wid,tid,salary,xli,exp,gw,gname,claim,type,uid) values (#{opera},#{treatment},#{wid},#{tid},#{salary},#{xli},#{exp},#{gw},#{gname},#{claim},#{type},#{uid})
+  </insert>
+
+
+<!--查询投递的简历-->
+  <select id="findTotalCount" resultType="INTEGER">
+    select count(*) from resume_en r,studentinfo s where r.tuid = #{uid} and r.uid = s.uid
+      <if test="university !=null and university !='' ">
+        and s.school = #{university}
+      </if>
+  </select>
+
+   <!--查询受理成功的-->
+  <select id="findTotalCountBystatu" resultType="INTEGER">
+    select count(*) from resume_en r,studentinfo s where r.status = '通过' and r.tuid = #{uid} and r.uid = s.uid
+    <if test="university !=null and university !='' ">
+      and s.school = #{university}
+    </if>
+  </select>
+
+   <!--查询简历-->
+  <select id="findResumeByPage" resultMap="ResumeAccept">
+    select r.*,s.* from resume_en r,studentinfo s where r.tuid = #{uid} and r.uid = s.uid
+      <if test="university !=null and university !='' ">
+        and s.school like '%${university}%'
+      </if>
+    <if test="status !=null and status !='' ">
+      and r.status = #{status}
+    </if>
+    limit #{start},#{rows}
+  </select>
+
+  <!--删除简历-->
+  <delete id="delectResume">
+     delete from resume_en where tid=#{tid} and wid = #{wid} and uid = #{uid}
+  </delete>
+
+
+  <select id="selectEnterInfo" resultType="com.just.emp.po.EnterInfo">
+    select * from enterinfo where uid = #{uid}
+  </select>
+
+  <update id="updateEnterInfo">
+    update enterinfo set
+    <if test="type=='tid'">
+      tid = #{chang}
+    </if>
+    <if test="type=='name'">
+      cname = #{chang}
+    </if>
+    <if test="type=='tel'">
+      tel = #{chang}
+    </if>
+    <if test="type=='statu'">
+      listing = #{chang}
+    </if>
+    <if test="type=='lea'">
+      legal = #{chang}
+    </if>
+    <if test="type=='fzr'">
+      principal = #{chang}
+    </if>
+    <if test="type=='time'">
+      time = #{chang}
+    </if>
+    <if test="type=='zj'">
+      money = #{chang}
+    </if>
+    <if test="type=='type'">
+      attribute = #{chang}
+    </if>
+    <if test="type=='js'">
+      info = #{chang}
+    </if>
+    <if test="type=='pe'">
+      people = #{chang}
+    </if>
+    <if test="type=='zt'">
+      status = #{chang}
+    </if>
+    <if test="type=='file' and chang != null">
+      licenseimg = #{chang}
+    </if>
+    where uid = #{uid}
+  </update>
+
+  <select id="selectworkOneInfo" resultMap="BaseResultMap1">
+    select a.*,w.* ,e.* from workinfo w,address a,enterinfo e where w.tid = #{tid} and w.wid = #{wid} and a.tid = w.tid and a.wid = w.wid and w.uid = e.uid
+  </select>
+
+  <!--修改workinfo表中的信息-->
+  <update id="UpdateEnterInfoWork">
+    update workinfo set
+    <if test="type=='zw'">
+      opera = #{chang}
+    </if>
+    <if test="type=='rz'">
+      claim = #{chang}
+    </if>
+    <if test="type=='sx'">
+      type = #{chang}
+    </if>
+    where uid = #{uid} and tid = #{tid} and wid = {wid}
+  </update>
+
+  <!--更新简历状态-->
+  <update id="updateResumeStatusEn">
+    update resume_en set status=#{status} where tid = #{tid} and wid = #{wid} and uid = #{uid}
+  </update>
+
+  <!--更新简历状态-->
+  <update id="updateResumeStatusStu">
+    update resume_stu set status=#{status},infomation = #{sm} where tid = #{tid} and wid = #{wid} and uid = #{uid}
+  </update>
+
+  <!--邮件内容-->
+  <select id="selectMail" resultMap="BaseResultMap1">
+    select w.gw ,e.cname from workinfo w,enterinfo e where w.tid = #{tid} and w.wid = #{wid} and w.uid = e.uid
+  </select>
+
+  <!--学生信息-->
+  <select id="selectStuInfo" resultType="com.just.emp.po.StudentInfo">
+    select name,email from studentinfo where uid = #{uid}
+  </select>
+  <update id="updatetouximg">
+    update enterinfo set touximg = #{imgpath} where uid = #{uid}
+  </update>
+  <update id="updateWorkZz">
+    update workinfo set opera = #{opera} where tid = #{tid} and wid=#{wid}
+  </update>
+  <update id="updateWorkLx">
+    update workinfo set claim = #{claim} where tid = #{tid} and wid=#{wid}
+  </update>
+  <update id="updateAddress">
+    update address set province = #{province},location = #{location} where tid = #{tid} and wid=#{wid}
+  </update>
+  <select id="selectFilename" resultType="String">
+    select resumefile from resume_stu where uid=#{uid} and wid=#{wid} and tid=#{tid}
+  </select>
+
+  <update id="updateGc">
+    update enterinfo set info = #{info} where tid = #{tid} and uid=#{uid}
+  </update>
+
+  <select id="selectMysql" resultType="com.just.emp.po.EnterInfo">
+    select * from enterinfo where uid = #{uid}
+  </select>
+  <update id="updateJb">
+    update enterinfo set principal = #{principal},people = #{people},listing = #{listing} where uid=#{uid}
+  </update>
+  <update id="updateTel">
+    update enterinfo set tel = #{tel},email = #{email} where uid=#{uid}
+  </update>
+  <update id="updateGs">
+    update enterinfo set cname = #{cname},legal = #{legal},money = #{money},time = #{time},attribute = #{attribute},status = #{status} where uid=#{uid}
+  </update>
+
+
+</mapper>

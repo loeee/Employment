@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.just.emp.mapper.UserloginMapper" >
+  <resultMap id="BaseResultMap" type="com.just.emp.po.Userlogin" >
+    <id column="uid" property="uid" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="login" resultMap="BaseResultMap" parameterType="com.just.emp.po.Userlogin">
+    select * from tab_user where username = #{username} and password = #{password} and type = #{type}
+  </select>
+  <select id="selectpwd" resultType="String">
+    select password from tab_user where uid=#{uid}
+  </select>
+  <update id="updatepwd">
+    update tab_user set password = #{pwd} where uid=#{uid}
+  </update>
+  <update id="updateheadImg">
+    update tab_user set toux = #{path} where uid=#{uid}
+  </update>
+  <update id="updatesetpwd">
+     update tab_user set password = #{pwd} where email=#{email}
+  </update>
+  <insert id="insert_tab">
+    INSERT INTO tab_user (uid,username,password,name,type,email) VALUES (#{uid},#{username},#{password},#{name},#{type},#{email})
+  </insert>
+  <insert id="insertStuInfo">
+    insert into studentinfo (uid,school,major,department,email,cla) values (#{uid},#{school},#{major},#{department},#{email},#{cla})
+  </insert>
+</mapper>
